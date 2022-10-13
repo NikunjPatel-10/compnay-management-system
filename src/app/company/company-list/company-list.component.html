@@ -7,32 +7,20 @@
             </div>
         </div>
         <div clas="w-100 ">
-            <input type="text" placeholder="Search" class="w-100 p-2 border border-dark">
+            <input type="text" placeholder="Search" class="w-100 p-2 border bo">
         </div>
     </div>
     <div class="flex-grow-1  w-100">
         <table class="table w-100 ">
             <tbody class="w-100 ">
-                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-1">1A</td>
-                    <td>1Rivet</td>
+                <tr *ngFor="let data of companylistData" class="d-flex justify-content-between w-100 p-2 fs-4">
+                    <td class="border border-dark  rounded-circle p-2">{{data.name}}</td>
+                    <td>{{data.description}}</td>
+                    <td>{{data.tags}}</td>
+                    <td>{{data.logo}}</td>
                     <td><a class="bi bi-x-square text-dark"></a></td>
                 </tr>
-                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-1">1A</td>
-                    <td>1Rivet</td>
-                    <td><a class="bi bi-x-square text-dark"></a></td>
-                </tr>
-                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-1">1A</td>
-                    <td>1Rivet</td>
-                    <td><a class="bi bi-x-square text-dark"></a></td>
-                </tr>
-                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-1">1A</td>
-                    <td>1Rivet</td>
-                    <td><a class="bi bi-x-square text-dark"></a></td>
-                </tr>
+
             </tbody>
         </table>
     </div>

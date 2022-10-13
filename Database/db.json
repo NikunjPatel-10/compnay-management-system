@@ -4,13 +4,15 @@
             "id": 1,
             "name": "one rivet",
             "description": "IT company",
-            "Tags": "front-end"
+            "tags": "front-end",
+            "logo": "abc"
         },
         {
             "id": 2,
             "name": " philips",
             "description": "IT company",
-            "Tags": "full-stack"
+            "tags": "full-stack",
+            "logo": "ghi"
         }
     ]
 }
