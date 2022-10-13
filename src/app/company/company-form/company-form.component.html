@@ -5,24 +5,40 @@
             <div class="">
                 <!-- <label for="validationServer01" class="form-label"> Company Name :</label> -->
                 <input type="text" class="form-control " id="validationServer01" placeholder="Company Name">
-
+                <div
+                    *ngIf="companyFormControl['name'].invalid && (isSubmitted || (companyFormControl['name'].touched || companyFormControl['name'].dirty) )">
+                    <span class="text-danger" *ngIf="companyFormControl['name'].errors?.['required']">This field is
+                        required</span>
+                </div>
             </div>
             <!-- company-description -->
             <div class="">
                 <textarea class="form-control " placeholder="Company description" id="floatingTextarea2"
                     style="height: 100px"></textarea>
-
+                <div
+                    *ngIf="companyFormControl['name'].invalid && (isSubmitted || (companyFormControl['name'].touched || companyFormControl['name'].dirty) )">
+                    <span class="text-danger" *ngIf="companyFormControl['name'].errors?.['required']">This field is
+                        required</span>
+                </div>
             </div>
             <!-- company-tags -->
             <div class="">
                 <!-- <label for="validationServer01" class="form-label"> Company Name :</label> -->
                 <input type="text" class="form-control " id="validationServer01" placeholder="select Tags">
-
+                <div
+                    *ngIf="companyFormControl['name'].invalid && (isSubmitted || (companyFormControl['name'].touched || companyFormControl['name'].dirty) )">
+                    <span class="text-danger" *ngIf="companyFormControl['name'].errors?.['required']">This field is
+                        required</span>
+                </div>
             </div>
             <div class="">
                 <!-- <label for="validationServer01" class="form-label"> Company Name :</label> -->
                 <input type="text" class="form-control " id="validationServer01" placeholder="select logo">
-
+                <div
+                    *ngIf="companyFormControl['name'].invalid && (isSubmitted || (companyFormControl['name'].touched || companyFormControl['name'].dirty) )">
+                    <span class="text-danger" *ngIf="companyFormControl['name'].errors?.['required']">This field is
+                        required</span>
+                </div>
             </div>
             <div>
                 <button class="p-2 me-3">Cancel</button>
