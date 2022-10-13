@@ -13,11 +13,11 @@
     <div class="flex-grow-1  w-100">
         <table class="table w-100 ">
             <tbody class="w-100 ">
-                <tr *ngFor="let data of companylistData" class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-2">{{data.name}}</td>
-                    <td>{{data.description}}</td>
-                    <td>{{data.tags}}</td>
-                    <td>{{data.logo}}</td>
+                <tr *ngFor="let data of company" class="d-flex justify-content-between w-100 p-2 fs-4">
+                    <td class="border border-dark  rounded-circle p-2">{{data.companyname}}</td>
+                    <td>{{data.companydescription}}</td>
+                    <td>{{data.companytags}}</td>
+
                     <td><a class="bi bi-x-square text-dark"></a></td>
                 </tr>
 

@@ -20,7 +20,7 @@ export class CompanyListComponent implements OnInit {
 
   GetComapanyData() {
     this.companyservice.getData().subscribe((res) => {
-      this.companylistData = res
+      this.company = res
     })
   }
 
