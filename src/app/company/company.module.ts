@@ -19,7 +19,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     CompanyRoutingModule,
-    RouterModule
+    RouterModule,
+
   ]
 })
 export class CompanyModule { }

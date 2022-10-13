@@ -1,0 +1,16 @@
+{
+    "companylist": [
+        {
+            "id": 1,
+            "name": "one rivet",
+            "description": "IT company",
+            "Tags": "front-end"
+        },
+        {
+            "id": 2,
+            "name": " philips",
+            "description": "IT company",
+            "Tags": "full-stack"
+        }
+    ]
+}
