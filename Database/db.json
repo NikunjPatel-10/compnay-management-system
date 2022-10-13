@@ -2,15 +2,15 @@
     "companylist": [
         {
             "id": 1,
-            "name": "one rivet",
-            "description": "IT company",
-            "Tags": "front-end"
+            "companyname": "one rivet",
+            "companydescription": "IT company",
+            "companytags": "front-end"
         },
         {
             "id": 2,
-            "name": " philips",
-            "description": "IT company",
-            "Tags": "full-stack"
+            "companyname": " philips",
+            "companydescription": "IT company",
+            "companytags": "full-stack"
         }
     ]
 }
