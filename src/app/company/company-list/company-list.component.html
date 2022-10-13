@@ -1,2 +1,40 @@
-<button [routerLink]="['add']">Add-Form</button>
-<p>company-list works!</p>
+<div class="h-100 d-flex flex-column">
+    <div class="m-2">
+        <div class="d-flex justify-content-between m-2 ">
+            <div class="fs-2">Clients</div>
+            <div> <button [routerLink]="['add']" class="border border-dark rounded-circle p-1 fs-4"><a
+                        class="bi bi-plus-lg text-dark"></a></button>
+            </div>
+        </div>
+        <div clas="w-100 ">
+            <input type="text" placeholder="Search" class="w-100 p-2 border border-dark">
+        </div>
+    </div>
+    <div class="flex-grow-1  w-100">
+        <table class="table w-100 ">
+            <tbody class="w-100 ">
+                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
+                    <td class="border border-dark  rounded-circle p-1">1A</td>
+                    <td>1Rivet</td>
+                    <td><a class="bi bi-x-square text-dark"></a></td>
+                </tr>
+                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
+                    <td class="border border-dark  rounded-circle p-1">1A</td>
+                    <td>1Rivet</td>
+                    <td><a class="bi bi-x-square text-dark"></a></td>
+                </tr>
+                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
+                    <td class="border border-dark  rounded-circle p-1">1A</td>
+                    <td>1Rivet</td>
+                    <td><a class="bi bi-x-square text-dark"></a></td>
+                </tr>
+                <tr class="d-flex justify-content-between w-100 p-2 fs-4">
+                    <td class="border border-dark  rounded-circle p-1">1A</td>
+                    <td>1Rivet</td>
+                    <td><a class="bi bi-x-square text-dark"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <p>company-list works!</p> -->
