@@ -46,9 +46,14 @@
                         required</span>
                 </div>
             </div>
-            <div>
-                <button class="p-2 me-3">Cancel</button>
-                <button class="p-2" (click)="saveCopmanyList()"> Save</button>
+            <div class="d-flex justify-content-between">
+                <div></div>
+                <div>
+                    <button class="p-2 me-3 btn btn-danger btn-lg" (click)="getForm()">Cancel</button>
+                    <button class="p-2 btn btn-primary btn-lg" (click)="saveCopmanyList()" *ngIf=!this.id> Save</button>
+                    <button class="p-2 btn btn-primary btn-lg" (click)="saveCopmanyList()" *ngIf=this.id>
+                        Update</button>
+                </div>
             </div>
 
         </form>
