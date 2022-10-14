@@ -14,6 +14,11 @@ export class CompanyService {
     this.baseurl = "http://localhost:3000/"
   }
 
+  public getDatabyId(id: number): Observable<Company> {
+    const url = this.baseurl + "companylist/" + id;
+    return this.http.get<Company>(url);
+  }
+
   public getData(): Observable<Company[]> {
     const url = this.baseurl + "companylist"
     return this.http.get<Company[]>(url);
