@@ -7,7 +7,8 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyPipe } from './pipe/company.pipe';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     CompanyComponent,
     CompanyFormComponent,
     CompanyListComponent,
-    CompanyPipe
+    CompanyPipe,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     CompanyRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ]
 })
