@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Company } from '../company.model';
 import { CompanyService } from '../service/company.service';
 
@@ -10,7 +11,8 @@ import { CompanyService } from '../service/company.service';
 export class CompanyListComponent implements OnInit {
   public companylistData: any;
   public company: Company[]
-  constructor(private companyservice: CompanyService) {
+  public id: any
+  constructor(private companyservice: CompanyService, private router: Router) {
     this.company = []
   }
 
@@ -22,6 +24,16 @@ export class CompanyListComponent implements OnInit {
     this.companyservice.getData().subscribe((res) => {
       this.company = res
     })
+  }
+
+  public deleteCompany(id: any) {
+    this.companyservice.deleteData(id).subscribe(res => {
+      this.GetComapanyData();
+    })
+  }
+
+  public EditCompanyData(id: any) {
+    this.router.navigate(['company/edit', id])
   }
 
 }

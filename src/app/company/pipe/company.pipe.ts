@@ -4,9 +4,10 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'company'
 })
 export class CompanyPipe implements PipeTransform {
+  charAt: any;
 
-  transform(value: string) {
-    return null;
+  transform(companyname: string) {
+    return this.charAt(0).toUpperCase() + this.charAt(1).toUpperCase() + companyname;
   }
 
 }

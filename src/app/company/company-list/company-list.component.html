@@ -14,11 +14,12 @@
         <table class="table w-100 ">
             <tbody class="w-100 ">
                 <tr *ngFor="let data of company" class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-2">{{data.companyname}}</td>
+                    <td class="border border-dark  rounded-circle p-2" (click)=" EditCompanyData(data.id)">
+                        {{data.companyname }}</td>
                     <td>{{data.companydescription}}</td>
                     <td>{{data.companytags}}</td>
 
-                    <td><a class="bi bi-x-square text-dark"></a></td>
+                    <td (click)="deleteCompany(data.id)"><a class="bi bi-x-square text-dark"></a></td>
                 </tr>
 
             </tbody>
