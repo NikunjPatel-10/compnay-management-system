@@ -13,8 +13,10 @@ export class CompanyListComponent implements OnInit {
   // public companylistData: any;
   public company: Company[]
   public id: any
+  public filterdata: string
   constructor(private companyservice: CompanyService, private router: Router, private datacommunicationservice: DataCommunicationService) {
-    this.company = []
+    this.company = [];
+    this.filterdata = ''
   }
 
   ngOnInit(): void {
