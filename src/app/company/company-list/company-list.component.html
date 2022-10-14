@@ -10,14 +10,17 @@
             <input type="text" placeholder="Search" class="w-100 p-2 border bo">
         </div>
     </div>
-    <div class="flex-grow-1  w-100">
-        <table class="table w-100 ">
+    <div class="flex-grow-1 p-2 w-100">
+        <table class="table table-striped  p-2 w-100 ">
             <tbody class="w-100 ">
-                <tr *ngFor="let data of company" class="d-flex justify-content-between w-100 p-2 fs-4">
-                    <td class="border border-dark  rounded-circle p-2" (click)=" EditCompanyData(data.id)">
-                        {{data.companyname }}</td>
+                <tr *ngFor="let data of company"
+                    class="d-flex justify-content-between w-100 p-2 fs-4 border border-dark"
+                    (click)=" EditCompanyData(data.id)">
+                    <td class="border border-dark   rounded rounded-circle p-2">
+                        {{data.companyname | company}}</td>
                     <td>{{data.companydescription}}</td>
                     <td>{{data.companytags}}</td>
+                    <td>{{data.companylogo}}</td>
 
                     <td (click)="deleteCompany(data.id)"><a class="bi bi-x-square text-dark"></a></td>
                 </tr>
