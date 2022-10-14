@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Company } from '../company.model';
 
 @Injectable({
@@ -8,8 +8,10 @@ import { Company } from '../company.model';
 })
 export class CompanyService {
   public baseurl: string
+
   public company: Company[];
   constructor(private http: HttpClient) {
+
     this.company = []
     this.baseurl = "http://localhost:3000/"
   }
@@ -34,8 +36,9 @@ export class CompanyService {
   };
   public updateData(company: Company, id: number): Observable<Company> {
     const url = this.baseurl + "companylist/" + id;
-    return this.http.put(url, company)
+    return this.http.put<Company>(url, company)
   }
+
 
 
 }
