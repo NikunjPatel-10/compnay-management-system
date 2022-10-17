@@ -1,0 +1,32 @@
+<div class="h-100 d-flex flex-column">
+    <div class="m-2">
+        <div class="d-flex justify-content-between m-2 ">
+            <div class="fs-2">Clients</div>
+            <div> <button [routerLink]="['add']" class="border border-dark rounded-circle p-1 fs-4"><a
+                        class="bi bi-plus-lg text-dark"></a></button>
+            </div>
+        </div>
+        <div clas="w-100 ">
+            <input type="text" placeholder="Search text here" class="w-100 p-3 border bo" [(ngModel)]="filterdata">
+        </div>
+    </div>
+    <div class="flex-grow-1 p-2 w-100">
+        <table class="table table-striped  p-2 w-100 ">
+            <tbody class="w-100 ">
+                <tr *ngFor="let data of company | search: filterdata"
+                    class="d-flex justify-content-between w-100 p-2 fs-4 border border-dark"
+                    (click)=" EditCompanyData(data.id)">
+                    <td class="border border-dark   rounded rounded-circle p-2">
+                        {{data.companyname | company}}</td>
+                    <td>{{data.companydescription}}</td>
+                    <td>{{data.companytags}}</td>
+                    <td>{{data.companylogo}}</td>
+
+                    <td (click)="deleteCompany(data.id)"><a class="bi bi-x-square text-dark"></a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <p>company-list works!</p> -->
