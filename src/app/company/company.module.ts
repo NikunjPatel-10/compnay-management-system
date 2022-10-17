@@ -8,6 +8,7 @@ import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyPipe } from './pipe/company.pipe';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchPipe } from './pipe/search.pipe';
 
 
@@ -24,7 +25,8 @@ import { SearchPipe } from './pipe/search.pipe';
     CompanyRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
 
   ]
 })

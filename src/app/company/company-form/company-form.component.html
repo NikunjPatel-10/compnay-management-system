@@ -26,15 +26,17 @@
             <!-- company-tags -->
             <div class="">
 
-                <input type="text" class="form-control " id="validationServer01" placeholder="select Tags"
-                    formControlName="companytags">
-                <div
-                    *ngIf="companyFormControl['companytags']?.invalid && (isSubmitted || (companyFormControl['companytags'].touched || companyFormControl['companytags'].dirty) )">
-                    <span class="text-danger" *ngIf="companyFormControl['companytags'].errors?.['required']">This field
-                        is
-                        required</span>
-                </div>
+                <ng-select class="form-control" bindLabel="name" placeholder="Select item" appendTo="body"
+                    [multiple]="true" [searchable]="true" [clearable]="true" formControlName="companytags">
+                    <ng-option *ngFor="let item of items">
+                        {{item.name}}
+                    </ng-option>
+                </ng-select>
+
             </div>
+
+
+            <!-- company logo -->
             <div class="">
 
                 <input type="text" class="form-control " id="validationServer01" placeholder="select logo"
@@ -49,9 +51,11 @@
             <div class="d-flex justify-content-between">
                 <div></div>
                 <div>
-                    <button class="p-2 me-3 btn btn-danger btn-lg" (click)="getForm()">Cancel</button>
-                    <button class="p-2 btn btn-primary btn-lg" (click)="saveCopmanyList()" *ngIf=!this.id> Save</button>
-                    <button class="p-2 btn btn-primary btn-lg" (click)="saveCopmanyList()" *ngIf=this.id>
+
+                    <button type="reset" class="p-2 me-3 btn btn-danger btn-lg" (click)="getForm()">Cancel</button>
+                    <button type="submit" class="p-2 btn btn-primary btn-lg" (click)="saveCopmanyList()" *ngIf=!this.id>
+                        Save</button>
+                    <button type="submit" class="p-2 btn btn-primary btn-lg" (click)="saveCopmanyList()" *ngIf=this.id>
                         Update</button>
                 </div>
             </div>

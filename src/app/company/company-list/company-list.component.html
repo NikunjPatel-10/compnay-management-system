@@ -16,10 +16,11 @@
                 <tr *ngFor="let data of company | search: filterdata"
                     class="d-flex justify-content-between w-100 p-2 fs-4 border border-dark"
                     (click)=" EditCompanyData(data.id)">
+                    <td>{{data.id}}</td>
                     <td class="border border-dark   rounded rounded-circle p-2">
                         {{data.companyname | company}}</td>
                     <td>{{data.companydescription}}</td>
-                    <td>{{data.companytags}}</td>
+                    <!-- <td>{{data.companytags}}</td> -->
                     <td>{{data.companylogo}}</td>
 
                     <td (click)="deleteCompany(data.id)"><a class="bi bi-x-square text-dark"></a></td>
