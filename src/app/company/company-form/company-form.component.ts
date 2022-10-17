@@ -64,7 +64,7 @@ export class CompanyFormComponent implements OnInit {
   }
 
   GetCompanyData() {
-    this.companyservice.getData().subscribe((res:Company[]) => {
+    this.companyservice.getData().subscribe((res: Company[]) => {
       this.companyData = res
     })
   }
