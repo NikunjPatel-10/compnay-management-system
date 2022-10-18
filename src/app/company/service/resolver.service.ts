@@ -7,5 +7,4 @@ export class ResolverService {
   constructor(private companyservice: CompanyService) { }
 
 
-
 }
