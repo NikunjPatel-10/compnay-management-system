@@ -1,46 +1,28 @@
 {
   "companylist": [
     {
-      "companyname": "boston",
-      "companydescription": "fgfg",
-      "companytags": "fgfgfg",
-      "companylogo": "uyfgf",
-      "id": 2
-    },
-    {
-      "companyname": "gnbnbn",
-      "companydescription": "fgfggghgh",
-      "companytags": "my life my rules",
-      "companylogo": "nice to see it",
+      "companyname": "parth",
+      "companydescription": "wewe",
+      "companytags": [
+        {
+          "$ngOptionLabel": " Vue ",
+          "disabled": false
+        }
+      ],
+      "companylogo": "weref",
       "id": 3
     },
     {
-      "companyname": "shivu",
-      "companydescription": "ghcv",
-      "companytags": "adbv",
-      "companylogo": "dfdffg",
+      "companyname": "1 Rivet",
+      "companydescription": "IT company",
+      "companytags": [
+        {
+          "$ngOptionLabel": " Node Js ",
+          "disabled": false
+        }
+      ],
+      "companylogo": "R",
       "id": 4
-    },
-    {
-      "companyname": "dfdfdf",
-      "companydescription": "fdfdf",
-      "companytags": "no to change aanything",
-      "companylogo": "fdfdf",
-      "id": 5
-    },
-    {
-      "companyname": "bfbvb",
-      "companydescription": "fgfb",
-      "companytags": "vbvb",
-      "companylogo": "   v v v ",
-      "id": 6
-    },
-    {
-      "companyname": "Nikunj",
-      "companydescription": "dcd",
-      "companytags": "dcc",
-      "companylogo": "ddd",
-      "id": 7
     }
   ]
 }

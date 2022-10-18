@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Company } from '../company.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CompanyService {
   public baseurl: string
 

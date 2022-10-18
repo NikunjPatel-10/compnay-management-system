@@ -4,7 +4,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'search'
 })
 export class SearchPipe implements PipeTransform {
-
+  /**
+   * 
+   * @param value 
+   * @param args 
+   * @returns 
+   */
   transform(value: any, args?: any): any {
 
     if (!value) return null;
