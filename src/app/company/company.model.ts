@@ -1,7 +1,7 @@
 export class Company {
 
-    id!: number;
-    companyname?: string;
+    id?: any;
+    companyname!: string;
     companydescription?: string;
     companytags?: string;
     companylogo?: string

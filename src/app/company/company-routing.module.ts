@@ -9,13 +9,11 @@ const routes: Routes = [{
   children: [
     {
       path: 'add',
-      component: CompanyFormComponent,
-      data: { breadcrumb: { alias: 'add' } },
+      component: CompanyFormComponent
     },
     {
       path: 'edit/:id',
-      component: CompanyFormComponent,
-      data: { breadcrumb: { alias: 'edit/:id' } }
+      component: CompanyFormComponent
     }
   ]
 
