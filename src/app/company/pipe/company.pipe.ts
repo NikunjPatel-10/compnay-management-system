@@ -4,7 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'company'
 })
 export class CompanyPipe implements PipeTransform {
-
+  /**
+   * 
+   * @param value 
+   * @returns 
+   */
   transform(value: string): any {
     let charAt = value
       .split(" ")

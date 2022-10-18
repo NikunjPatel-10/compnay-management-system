@@ -10,6 +10,10 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchPipe } from './pipe/search.pipe';
+import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
+import { CompanyService } from './service/company.service';
+import { DataCommunicationService } from './service/data-communication.service';
+import { ResolverService } from './service/resolver.service';
 
 
 @NgModule({
@@ -18,7 +22,8 @@ import { SearchPipe } from './pipe/search.pipe';
     CompanyFormComponent,
     CompanyListComponent,
     CompanyPipe,
-    SearchPipe
+    SearchPipe,
+
   ],
   imports: [
     CommonModule,
@@ -26,8 +31,18 @@ import { SearchPipe } from './pipe/search.pipe';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgDynamicBreadcrumbModule
 
+  ],
+  exports: [
+    CompanyFormComponent,
+    CompanyListComponent
+  ],
+  providers: [
+    CompanyService,
+    DataCommunicationService,
+    ResolverService
   ]
 })
 export class CompanyModule { }
