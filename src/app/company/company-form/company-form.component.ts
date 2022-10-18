@@ -11,40 +11,25 @@ import { DataCommunicationService } from '../service/data-communication.service'
   styleUrls: ['./company-form.component.scss']
 })
 export class CompanyFormComponent implements OnInit {
-  public items = [
-    { name: 'Python' },
-    { name: 'Node Js' },
-    { name: 'Java' },
-    { name: 'PHP' },
-    { name: 'Django' },
-    { name: 'Angular' },
-    { name: 'Vue' },
-    { name: 'ReactJs' },
-  ];
   public companyForm: FormGroup;
   public isSubmitted: boolean;
-  public id: any;
+  public id: any
   public companyData: Company[]
-  selected: any;
-
-
   constructor(public formbuilder: FormBuilder, public companyservice: CompanyService, public activatedroute: ActivatedRoute, public router: Router,
     private dataCommunicationService: DataCommunicationService) {
     this.isSubmitted = false;
     this.companyData = []
     this.companyForm = this.formbuilder.group({
-      companyname: ['', [Validators.required]],
-      companydescription: ['', [Validators.required]],
+      companyname: ['', [Validators.required, Validators.pattern("[a-zA-Z]*")]],
+      companydescription: ['', [Validators.required, Validators.pattern("[a-zA-Z]*")]],
       companytags: ['', [Validators.required]],
       companylogo: ['', [Validators.required]],
+      id: Number
     })
-
 
     this.activatedroute.params.subscribe((params) => {
 
       this.id = params['id'];
-      console.log(this.id);
-
       this.CompanyDatabyId()
     })
   }
@@ -52,6 +37,7 @@ export class CompanyFormComponent implements OnInit {
   ngOnInit(): void {
     this.GetCompanyData()
   }
+
 
   public saveCopmanyList() {
     this.isSubmitted = true;
@@ -68,6 +54,7 @@ export class CompanyFormComponent implements OnInit {
         // })
 
         this.companyservice.postData(this.companyForm.value).subscribe((companyData: Company) => {
+
           this.dataCommunicationService.getListData(companyData);
 
         })
@@ -77,19 +64,19 @@ export class CompanyFormComponent implements OnInit {
   }
 
   GetCompanyData() {
-    this.companyservice.getData().subscribe((res: Company[]) => {
+    this.companyservice.getData().subscribe((res:Company[]) => {
       this.companyData = res
     })
   }
 
   public CompanyDatabyId() {
-    this.companyservice.getDatabyId((this.id)).subscribe((company: Company) => {
+    this.companyservice.getDatabyId(this.id).subscribe((company: Company) => {
       this.companyForm.patchValue(company)
     })
   }
 
   public UpdateCompanydata() {
-    this.companyservice.updateData(this.companyForm.value, this.id).subscribe((company: Company) => {
+    this.companyservice.updateData(this.companyForm.value, Number(this.id)).subscribe((company: Company) => {
       // this.GetCompanyData()
       this.dataCommunicationService.getListData(company)
     })
