@@ -1,18 +1,6 @@
 {
   "companylist": [
     {
-      "id": 1,
-      "companyname": "parth",
-      "companydescription": "wewe",
-      "companytags": [
-        {
-          "$ngOptionLabel": " Vue ",
-          "disabled": false
-        }
-      ],
-      "companylogo": "weref"
-    },
-    {
       "companyname": "1 Rivet",
       "companydescription": "IT company",
       "companytags": [
@@ -23,6 +11,30 @@
       ],
       "companylogo": "R",
       "id": 2
+    },
+    {
+      "companyname": "Vishvani Solution",
+      "companydescription": "new inovation",
+      "companytags": [
+        {
+          "$ngOptionLabel": " Django ",
+          "disabled": false
+        }
+      ],
+      "companylogo": "V",
+      "id": 3
+    },
+    {
+      "companyname": "Nikunj pvt",
+      "companydescription": "Create your idea",
+      "companytags": [
+        {
+          "$ngOptionLabel": " ReactJs ",
+          "disabled": false
+        }
+      ],
+      "companylogo": "NP",
+      "id": 4
     }
   ]
 }
