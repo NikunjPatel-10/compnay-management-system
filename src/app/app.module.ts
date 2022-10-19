@@ -8,6 +8,9 @@ import { CoreModule } from './core/core.module';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http'
+import { BreadcrumbService } from './company/service/breadcrumb.service';
+import { CompanyModule } from './company/company.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
+    CompanyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

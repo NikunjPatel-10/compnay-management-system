@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { CompanyModule } from '../company/company.module';
 import { RouterModule } from '@angular/router';
+import { BreadcrumbService } from '../company/service/breadcrumb.service';
+
 
 
 
@@ -13,8 +15,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     CompanyModule,
-    RouterModule
+    RouterModule,
+    CompanyModule,
   ],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent],
+  providers: []
 })
 export class CoreModule { }

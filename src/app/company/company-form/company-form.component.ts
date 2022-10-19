@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from '../company.model';
+import { BreadcrumbService } from '../service/breadcrumb.service';
 import { CompanyService } from '../service/company.service';
 import { DataCommunicationService } from '../service/data-communication.service';
 
@@ -23,13 +24,16 @@ export class CompanyFormComponent implements OnInit {
   ];
   public companyForm: FormGroup;
   public isSubmitted: boolean;
-  public id: any;
+  public id: number;
   public companyData: Company[]
   selected: any;
 
+  subjectData!: string
 
   constructor(public formbuilder: FormBuilder, public companyservice: CompanyService, public activatedroute: ActivatedRoute, public router: Router,
-    private dataCommunicationService: DataCommunicationService) {
+    private dataCommunicationService: DataCommunicationService, private breadcrumb: BreadcrumbService
+  ) {
+    this.id = 0
     this.isSubmitted = false;
     this.companyData = []
     this.companyForm = this.formbuilder.group({
@@ -43,15 +47,19 @@ export class CompanyFormComponent implements OnInit {
     this.activatedroute.params.subscribe((params) => {
 
       this.id = params['id'];
-      console.log(this.id);
+      // console.log(this.id);
 
       this.CompanyDatabyId()
     })
   }
 
   ngOnInit(): void {
+
     this.GetCompanyData()
+    this.breadcrumb.breadcrumb.subscribe(res => this.subjectData = res)
   }
+
+
 
   public saveCopmanyList() {
     this.isSubmitted = true;
@@ -77,13 +85,13 @@ export class CompanyFormComponent implements OnInit {
   }
 
   GetCompanyData() {
-    this.companyservice.getData().subscribe((res: Company[]) => {
+    this.companyservice.getData().subscribe((res) => {
       this.companyData = res
     })
   }
 
   public CompanyDatabyId() {
-    this.companyservice.getDatabyId((this.id)).subscribe((company: Company) => {
+    this.companyservice.getDatabyId((this.id)).subscribe(company => {
       this.companyForm.patchValue(company)
     })
   }
@@ -103,5 +111,7 @@ export class CompanyFormComponent implements OnInit {
   get companyFormControl() {
     return this.companyForm.controls
   }
+
+
 
 }

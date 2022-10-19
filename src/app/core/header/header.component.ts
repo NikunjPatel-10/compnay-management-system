@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreadcrumbService } from 'src/app/company/service/breadcrumb.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public title!: string;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private breadcrumb: BreadcrumbService) {
   }
 
+  ngOnInit(): void {
+    this.breadcrumb.breadcrumb.subscribe(res => this.title = res)
+  }
 }
