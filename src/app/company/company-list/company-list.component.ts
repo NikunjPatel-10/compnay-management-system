@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Company } from '../company.model';
+import { BreadcrumbService } from '../service/breadcrumb.service';
+
 import { CompanyService } from '../service/company.service';
 import { DataCommunicationService } from '../service/data-communication.service';
 
@@ -14,21 +16,45 @@ export class CompanyListComponent implements OnInit {
   public company: Company[]
   public id: any
   public filterdata: string
-  constructor(private companyservice: CompanyService, private router: Router, private datacommunicationservice: DataCommunicationService) {
+
+  /**
+   * 
+   * @param companyservice 
+   * @param router 
+   * @param datacommunicationservice 
+   * @param breadcrumbservice 
+   */
+  constructor(private companyservice: CompanyService,
+    private breadcrumbservice: BreadcrumbService,
+    private router: Router,
+    private datacommunicationservice: DataCommunicationService,
+  ) {
     this.company = [];
     this.filterdata = ''
   }
 
   ngOnInit(): void {
+
+
+
     this.datacommunicationservice.ListData$.subscribe((data: any) => {
       if (data) {
         this.GetCompanyData();
       }
     })
     this.GetCompanyData();
+
+
+  }
+  public addBreadcrumb() {
+    this.breadcrumbservice.breadcrumb.next('add')
   }
 
-  GetCompanyData() {
+  public editBreadCrumb(companyname: string) {
+    this.breadcrumbservice.breadcrumb.next(companyname)
+  }
+
+  public GetCompanyData() {
     this.companyservice.getData().subscribe((res: Company[]) => {
       this.company = res
     })
@@ -41,8 +67,6 @@ export class CompanyListComponent implements OnInit {
     })
   }
 
-  public EditCompanyData(id: any) {
-    this.router.navigate(['company/edit', id])
-  }
+
 
 }
