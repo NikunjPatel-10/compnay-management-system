@@ -26,6 +26,8 @@ export class CompanyFormComponent implements OnInit {
   public id: any;
   public companyData: Company[]
   selected: any;
+
+
   constructor(public formbuilder: FormBuilder, public companyservice: CompanyService, public activatedroute: ActivatedRoute, public router: Router,
     private dataCommunicationService: DataCommunicationService) {
     this.isSubmitted = false;
@@ -49,10 +51,6 @@ export class CompanyFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetCompanyData()
-  }
-
-  getValues() {
-    console.log(this.selected);
   }
 
   public saveCopmanyList() {

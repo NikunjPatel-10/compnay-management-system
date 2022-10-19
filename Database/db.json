@@ -13,42 +13,13 @@
       "id": 3
     },
     {
-      "companyname": "qswqs",
-      "companydescription": "swsd",
+      "companyname": "1 Rivet",
+      "companydescription": "IT company",
       "companytags": [
         {
           "$ngOptionLabel": " Node Js ",
           "disabled": false
         }
       ],
-      "companylogo": "sdsd",
-      "id": 4
-    },
-    {
-      "companyname": "fggfg",
-      "companydescription": "tyteyg",
-      "companytags": [
-        {
-          "$ngOptionLabel": " Node Js ",
-          "disabled": false
-        }
-      ],
-      "companylogo": "d c ",
-      "id": 5
-    },
-    {
-      "companyname": "bfbvb",
-      "companydescription": "fgfb",
-      "companytags": "vbvb",
-      "companylogo": "   v v v ",
-      "id": 6
-    },
-    {
-      "companyname": "Nikunj",
-      "companydescription": "dcd",
-      "companytags": "dcc",
-      "companylogo": "ddd",
-      "id": 7
-    }
-  ]
-}
+    ]
+  }

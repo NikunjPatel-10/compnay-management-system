@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Company } from '../company.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataCommunicationService {
   public ListData: Subject<Company>
   public ListData$: Observable<Company>
