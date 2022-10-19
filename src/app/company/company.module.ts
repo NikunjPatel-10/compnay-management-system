@@ -12,7 +12,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchPipe } from './pipe/search.pipe';
 import { CompanyService } from './service/company.service';
 import { DataCommunicationService } from './service/data-communication.service';
-import { ResolverService } from './service/resolver.service';
+
 import { BreadcrumbService } from './service/breadcrumb.service';
 
 
@@ -41,7 +41,6 @@ import { BreadcrumbService } from './service/breadcrumb.service';
   providers: [
     CompanyService,
     DataCommunicationService,
-    ResolverService,
 
   ],
 

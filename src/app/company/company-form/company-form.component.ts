@@ -48,8 +48,9 @@ export class CompanyFormComponent implements OnInit {
 
       this.id = params['id'];
       // console.log(this.id);
-
-      this.CompanyDatabyId()
+      this.activatedroute.data.subscribe(res => {
+        this.companyForm.patchValue(res['company'])
+      })
     })
   }
 
@@ -90,11 +91,11 @@ export class CompanyFormComponent implements OnInit {
     })
   }
 
-  public CompanyDatabyId() {
-    this.companyservice.getDatabyId((this.id)).subscribe(company => {
-      this.companyForm.patchValue(company)
-    })
-  }
+  // public CompanyDatabyId() {
+  //   this.companyservice.getDatabyId((this.id)).subscribe(company => {
+  //     this.companyForm.patchValue(company)
+  //   })
+  // }
 
   public UpdateCompanydata() {
     this.companyservice.updateData(this.companyForm.value, this.id).subscribe((company: Company) => {
