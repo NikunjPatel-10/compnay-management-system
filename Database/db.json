@@ -20,6 +20,7 @@
           "$ngOptionLabel": " Node Js ",
           "disabled": false
         }
-      ],
-    ]
-  }
+      ]
+    }
+  ]
+}
